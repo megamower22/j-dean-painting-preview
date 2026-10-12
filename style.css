@@ -10,6 +10,7 @@
   --mint: #3ddc97;
   --muted: #55524b;
   --font-display: "Chango", "Arial Black", system-ui, sans-serif;
+  --font-brand: "DM Serif Display", Georgia, serif;
   --font-body: "Albert Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -37,20 +38,21 @@ h2 { font-size: clamp(26px, 3.8vw, 42px); }
 .header { background: var(--paper); position: sticky; top: 0; z-index: 10; }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 10px; padding-bottom: 10px; }
 .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; min-width: 0; }
-.logo { width: 72px; height: 72px; flex: 0 0 auto; border-radius: 16px; border: 3px solid var(--ink); background: linear-gradient(90deg, var(--tomato) 0 25%, var(--sun) 25% 50%, var(--sky) 50% 75%, var(--mint) 75%); display: flex; align-items: center; justify-content: center; }
-.logo span { font-family: var(--font-display); font-size: 36px; color: var(--paper); -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill; line-height: 1; }
+.logo { width: 68px; height: 68px; flex: 0 0 auto; border-radius: 14px; background: var(--ink); display: flex; align-items: center; justify-content: center; box-shadow: inset 0 -6px 0 var(--tomato); }
+.logo span { font-family: var(--font-brand); font-size: 32px; color: var(--paper); letter-spacing: .02em; line-height: 1; margin-top: -4px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.02; min-width: 0; }
-.brand-name { font-family: var(--font-display); font-size: 38px; color: var(--ink); white-space: nowrap; }
+.brand-name { font-family: var(--font-brand); font-size: 36px; color: var(--ink); white-space: nowrap; letter-spacing: .005em; }
 .brand-sub { font-weight: 800; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .14em; margin-top: 4px; }
 .stripes { display: flex; height: 8px; }
 .stripes i { flex: 1; }
 .stripes i:nth-child(1) { background: var(--tomato); } .stripes i:nth-child(2) { background: var(--sun); } .stripes i:nth-child(3) { background: var(--sky); } .stripes i:nth-child(4) { background: var(--mint); }
 
-.hero { position: relative; background: var(--ink); color: var(--paper); padding: 64px 0 110px; }
+.hero { position: relative; background: var(--ink); color: var(--paper); padding: 64px 0 76px; }
 .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; }
 .kicker { display: inline-block; background: var(--sun); color: var(--ink); font-weight: 800; text-transform: uppercase; letter-spacing: .12em; font-size: 14px; padding: 6px 14px; border-radius: 8px; margin: 0 0 18px; }
-.hero-name { font-size: clamp(66px, 10.5vw, 132px); line-height: .95; margin: 0 0 22px; color: var(--paper); }
-.hero-name span { display: block; font-size: .5em; color: var(--tomato); margin-top: 8px; }
+.hero-name { font-family: var(--font-brand); font-size: clamp(64px, 9.5vw, 124px); line-height: .98; letter-spacing: -.005em; margin: 0 0 24px; color: var(--paper); }
+.hero-name span { display: block; color: var(--sun); font-style: italic; }
+.hero-name::after { content: ""; display: block; width: 120px; height: 6px; margin-top: 18px; border-radius: 3px; background: linear-gradient(90deg, var(--tomato) 0 25%, var(--sun) 25% 50%, var(--sky) 50% 75%, var(--mint) 75%); }
 .hero-line { font-size: 20px; color: #e8e2d4; max-width: 580px; margin: 0; }
 .hero-btns { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
 .hero .btn { border-color: var(--paper); box-shadow: 5px 5px 0 var(--paper); }
@@ -63,7 +65,7 @@ h2 { font-size: clamp(26px, 3.8vw, 42px); }
 .can-body small { display: block; font-weight: 800; font-size: 14px; margin-top: 4px; }
 .drips { position: absolute; left: 0; right: 0; bottom: -40px; height: 60px; background: var(--ink); clip-path: polygon(0 0,100% 0,100% 30%,96% 30%,95% 90%,93% 92%,92% 30%,78% 30%,77% 70%,75% 72%,74% 30%,55% 30%,54% 100%,52% 100%,51% 30%,33% 30%,32% 60%,30% 62%,29% 30%,12% 30%,11% 85%,9% 87%,8% 30%,0 30%); }
 
-.swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 74px; position: relative; }
+.swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; position: relative; }
 .sw { border: 3px solid var(--ink); border-radius: 14px; overflow: hidden; background: #fff; }
 .sw b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 24px; padding: 26px 16px 10px; }
 .sw span { display: block; background: #fff; padding: 8px 16px 12px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; border-top: 3px solid var(--ink); }
@@ -123,12 +125,12 @@ h2 { font-size: clamp(26px, 3.8vw, 42px); }
 @media (max-width: 600px) {
   body { font-size: 17px; }
   .btn-sm { display: none; }
-  .logo { width: 58px; height: 58px; }
-  .logo span { font-size: 28px; }
-  .brand-name { font-size: 30px; }
-  .brand-sub { font-size: 12px; }
-  .hero { padding: 44px 0 90px; }
-  .hero-name { font-size: 17vw; }
+  .logo { width: 54px; height: 54px; }
+  .logo span { font-size: 25px; }
+  .brand-name { font-size: 26px; }
+  .brand-sub { font-size: 10px; letter-spacing: .08em; white-space: nowrap; }
+  .hero { padding: 44px 0 56px; }
+  .hero-name { font-size: 16vw; }
   .hero-line { font-size: 17px; }
   .btn-lg { font-size: 17px; padding: 13px 22px; }
   .sw b { font-size: 19px; padding: 20px 12px 8px; }
@@ -138,4 +140,4 @@ h2 { font-size: clamp(26px, 3.8vw, 42px); }
   .phone { font-size: 9.6vw; }
   .info div { grid-template-columns: 1fr; gap: 2px; }
 }
-@media (max-width: 380px) { .brand-name { font-size: 26px; } }
+@media (max-width: 380px) { .brand-name { font-size: 22px; } }

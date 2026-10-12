@@ -17,7 +17,7 @@ Live preview: https://megamower22.github.io/j-dean-painting-preview/
 ## Good to know
 
 - **Colors** are at the top of `style.css`: `--ink` and `--paper` are the base, and `--tomato`, `--sun`, `--sky` and `--mint` are the paint-swatch accents.
-- **Fonts** come from Google Fonts: **Chango** for headings, **Albert Sans** for body text and buttons (`--font-display` and `--font-body` in `style.css`).
+- **Fonts** come from Google Fonts: **DM Serif Display** for the logo, business name and hero title (`--font-brand`), **Chango** for section headings, **Albert Sans** for body text and buttons (`--font-display` and `--font-body` in `style.css`).
 - Anything in yellow highlight that says **[Owner to confirm]** still needs real info from the owner. Once it's confirmed, delete the whole `<span class="placeholder">...</span>` part.
 - **Services** are the `<li>` items inside the two `class="chips"` lists (Interior and Exterior).
 - **Reviews** are real Google reviews, shown as `<blockquote class="note">` blocks. When the review count changes, search for `23 Google` and update it (it appears twice).
